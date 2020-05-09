@@ -1,5 +1,5 @@
 # webApp
 Simple web app using sense hat(charts, leds, joystick)
 
-## 1. step
+## v0.1 - actual
 Adding rpy(roll, pitch, yaw) chart from SenseHat
