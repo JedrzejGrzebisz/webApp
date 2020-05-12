@@ -2,18 +2,18 @@ const sampleTimeSec = 1; 					// sample time in sec
 const sampleTimeMsec = 1000*sampleTimeSec;	// sample time in msec
 const maxSamplesNumber = 100;				// maximum number of samples
 
-var xData; // x-axis labels array: time stamps
-var yRollData; // y-axis data array: roll
-var yPitchData; // y-axis data array: pitch
-var yYawData; // y-axis data array: yaw
-var lastTimeStamp; // most recent time stamp 
+let xData; // x-axis array: time
+let yRollData; // y-axis array: roll
+let yPitchData; // y-axis array: pitch
+let yYawData; // y-axis array: yaw
+let lastTimeStamp; // recent time stamp 
 
-var myChartCtx;  // chart context i.e. object that "owns" chart
-var myChart; // Chart.js object
+let myChartCtx;  // myChart context
+let myChart; // Chart.js object
 
-var timer; // request timer
+let timer; // request timer
 
-const url = 'http://192.168.56.22/webApp/rpyValue.json'; // server app with JSON API
+const urlDefault = 'http://192.168.56.22/webApp/rpyValue.json'; // server app with JSON API
 
 /**
 * @brief Add new values to next data point.
@@ -67,7 +67,7 @@ function stopTimer()
 */
 function ajaxJSON() 
 {
-	$.ajax(url, {
+	$.ajax(urlDefault, {
 		type: 'GET', dataType: 'json',
 		success: function(responseJSON, status, xhr) {
 			addData(+responseJSON.Roll, +responseJSON.Pitch, +responseJSON.Yaw);
