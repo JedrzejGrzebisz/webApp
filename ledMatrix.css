@@ -1,9 +1,7 @@
 #container {
     width: 800px;
     height: 330px;
-    padding: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
+    padding: 10px 10px 10px 10px;
     background-color: #666666;
     display: grid;
     grid-column-gap: 40px;
@@ -25,24 +23,6 @@
     font-size: 40px;
     text-align: center;
     justify-content: center;
-    
-}
-
-/*#singleLedHeader {
-    grid-area: singleLedHeader;
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
-    font-size: 30px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: #009BDD;
-    
-}*/
-
-#singleLedContent {
-    grid-area: singleLedContent;
-    background-color: #80DD80;
 }
 
 .contentHeader {
@@ -51,12 +31,86 @@
     color: white;
     font-size: 30px;
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 0px 10px 0px;
     background-color: #009BDD;
 }
 
-#textLedContent {
-    grid-area: textLedContent;
+.content {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    grid-area: singleLedContent, textLedContent;
+    padding: 10px;
     background-color: #80DD80;
+    color: white;
+}
+
+.singleLedInput {
+    width: 50%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 8px 8px 8px 0px;
+    outline: none;
+    transition: 0.3s;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.singleLedInput:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.textLedInput {
+    width: 75%;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    margin: 32px 8px 35px 0px;
+    outline: none;
+    transition: 0.3s;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.textLedInput:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.colorSelect {
+    width: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    background: #fff;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+    padding: 8px;
+    margin: 8px 8px 8px 0px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.colorSelect:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}
+
+.button {
+    background-color: #f0fb3e;
+    border: none;
+    color: #666666;
+    text-align: center;
+    font-size: 20px;
+    margin-left: 20px;
+    height: 50px;
+    width: 100px;
+    opacity: 0.8;
+    transition: 0.3s;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.button:hover {
+      opacity: 1
 }
