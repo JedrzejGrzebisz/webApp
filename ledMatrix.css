@@ -1,0 +1,62 @@
+#container {
+    width: 800px;
+    height: 330px;
+    padding: 10px;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: #666666;
+    display: grid;
+    grid-column-gap: 40px;
+    grid-row-gap: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px 50px 200px;
+    grid-template-areas: 
+        "header header"
+        "singleLedHeader textLedHeader"
+        "singleLedContent textLedContent";
+}
+
+.mainHeader {
+    grid-area: header;
+    height: 50px;
+    background-color: #00ACEE;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+/*#singleLedHeader {
+    grid-area: singleLedHeader;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #009BDD;
+    
+}*/
+
+#singleLedContent {
+    grid-area: singleLedContent;
+    background-color: #80DD80;
+}
+
+.contentHeader {
+    grid-area: textLedHeader, singleLedHeader;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #009BDD;
+}
+
+#textLedContent {
+    grid-area: textLedContent;
+    background-color: #80DD80;
+}
