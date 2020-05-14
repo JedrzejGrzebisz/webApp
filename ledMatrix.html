@@ -22,31 +22,31 @@
             Tekst
         </div>
         <div id="singleLedContent" class="content">
-            <input class="singleLedInput" type="number" placeholder="Numer wiersza (0-7)" min="0" max="7" step="1">
-            <input class="singleLedInput" type="number" placeholder="Numer kulumny (0-7)" min="0" max="7" step="1"><br>
+            <input id="rowNumber" class="singleLedInput" type="number" placeholder="Numer wiersza (0-7)" min="0" max="7" step="1">
+            <input id="columnNumber" class="singleLedInput" type="number" placeholder="Numer kulumny (0-7)" min="0" max="7" step="1"><br>
             Wybierz kolor:<br>
             <div class="selectDiv">
-                <select class="colorSelect">
+                <select id="singleLedColor" class="colorSelect">
                     <option value="red">Red</option>
                     <option value="green">Green</option>
                     <option value="blue">Blue</option>
                     <option value="orange">Orange</option>
                     <option value="white">White</option>
                 </select>
-                <button type="button" class="button" class="singleLedButton">Zapal</button>
+                <button type="button" class="button" id="singleLedButton">Zapal</button>
             </div>
             
         </div>
         <div id="textLedContent" class="content">
-            <input class="textLedInput" type="text" placeholder="Wpisz tekst"><br>
+            <input id="textLed" class="textLedInput" type="text" placeholder="Wpisz tekst"><br>
             Wybierz kolor:<br>
             <div class="selectDiv">
-                <select class="colorSelect">
-                    <option value="">Red</option>
-                    <option value="">Green</option>
-                    <option value="">Blue</option>
-                    <option value="">Orange</option>
-                    <option value="">White</option>
+                <select id="textLedColor" class="colorSelect">
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                    <option value="orange">Orange</option>
+                    <option value="white">White</option>
                 </select>
                 <button type="button" class="button" id="textLedButton">Zapal</button>
             </div>
