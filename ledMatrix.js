@@ -3,7 +3,6 @@ let dataDict;
 
 function ajaxSend(event) 
 {
-    
     if (event.data.type == "single")
     {
         urlAddress = 'http://192.168.56.22/webApp/singleLedColor.php'

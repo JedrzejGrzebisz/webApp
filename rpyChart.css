@@ -20,3 +20,26 @@
 	justify-content: center;
 	flex-direction: column;
 }
+
+.config {
+	height: 40px;
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	flex-direction: row;
+}
+
+.userInput {
+    border: 2px solid #aaa;
+	border-radius: 4px;
+	margin-right: 5px;
+    outline: none;
+    transition: 0.3s;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.userInput:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 8px 0 dodgerblue;
+}

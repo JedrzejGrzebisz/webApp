@@ -1,6 +1,11 @@
-const sampleTimeSec = 1; 					// sample time in sec
-const sampleTimeMsec = 1000*sampleTimeSec;	// sample time in msec
-const maxSamplesNumber = 100;				// maximum number of samples
+const defaultSampleTimeSec = 1; 					// default sample time in sec
+const defaultSampleTimeMsec = 1000*defaultSampleTimeSec;	// default sample time in msec
+const defaultMaxSamplesNumber = 100;				// default maximum number of samples
+
+let sampleTimeSec = defaultSampleTimeSec; // sample time in sec
+let sampleTimeMsec = defaultSampleTimeMsec; // sample time is msc
+let maxSamplesNumber = defaultMaxSamplesNumber;	//maximum number of samples
+let xd = 10;
 
 let xData; // x-axis array: time
 let yRollData; // y-axis array: roll
@@ -14,6 +19,24 @@ let myChart; // Chart.js object
 let timer; // request timer
 
 const urlDefault = 'http://192.168.56.22/webApp/rpyValue.json'; // server app with JSON API
+
+/**
+* @brief Set selected sample time and maximum number of samples
+*/
+function setSettings()
+{
+	if ($('#sampleTime').val())
+	{
+		sampleTimeMsec = parseInt($('#sampleTime').val());
+		sampleTimeSec = sampleTimeMsec/1000;
+		$("#sampletime").text(sampleTimeMsec.toString());
+	}
+	if ($('#maxSamplesNumber').val())
+	{
+		maxSamplesNumber = parseInt($('#maxSamplesNumber').val());
+		$("#samplenumber").text(maxSamplesNumber.toString());
+	}
+}
 
 /**
 * @brief Add new values to next data point.
@@ -143,7 +166,7 @@ function chartInit()
 				xAxes: [{
 					scaleLabel: {
 						display: true,
-						labelString: 'Time [s]'
+						labelString: 'Sample'
 					}
 				}]
 			}
@@ -160,6 +183,7 @@ $(document).ready(() => {
 	chartInit();
 	$("#start").click(startTimer);
 	$("#stop").click(stopTimer);
-	$("#sampletime").text(sampleTimeMsec.toString());
-	$("#samplenumber").text(maxSamplesNumber.toString());
+	$("#saveSettings").click(setSettings);
+	$("#sampletime").text(defaultSampleTimeMsec.toString());
+	$("#samplenumber").text(defaultMaxSamplesNumber.toString());
 });
