@@ -5,7 +5,7 @@ function ajaxSend(event)
 {
     if (event.data.type == "single")
     {
-        urlAddress = 'http://192.168.56.22/webApp/singleLedColor.php'
+        urlAddress = 'webApp/singleLedColor.php'
         dataDict = {
              row: $('#rowNumber').val(),
              column: $('#columnNumber').val(),
@@ -14,7 +14,7 @@ function ajaxSend(event)
     }
     else if (event.data.type == "text")
     {
-        urlAddress = "http://192.168.56.22/webApp/textLedColor.php"
+        urlAddress = 'webApp/textLedColor.php'
         dataDict = {
             text: $('#textLed').val(),
             color: $('#textLedColor').val()

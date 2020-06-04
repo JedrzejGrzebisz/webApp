@@ -5,7 +5,6 @@ const defaultMaxSamplesNumber = 100;				// default maximum number of samples
 let sampleTimeSec = defaultSampleTimeSec; // sample time in sec
 let sampleTimeMsec = defaultSampleTimeMsec; // sample time is msc
 let maxSamplesNumber = defaultMaxSamplesNumber;	//maximum number of samples
-let xd = 10;
 
 let xData; // x-axis array: time
 let yRollData; // y-axis array: roll
@@ -18,7 +17,7 @@ let myChart; // Chart.js object
 
 let timer; // request timer
 
-const urlDefault = 'http://192.168.56.22/webApp/rpyValue.json'; // server app with JSON API
+const urlDefault = 'webApp/rpyValue.json'; // server app with JSON API
 
 /**
 * @brief Set selected sample time and maximum number of samples
@@ -36,6 +35,21 @@ function setSettings()
 		maxSamplesNumber = parseInt($('#maxSamplesNumber').val());
 		$("#samplenumber").text(maxSamplesNumber.toString());
 	}
+
+	configDict = {
+            sampleTimeMsc: sampleTimeMsec,
+            maxSamplesNb: maxSamplesNumber
+      		}
+
+	$.ajax({
+        type: 'GET',
+        url: 'webApp/config.php',
+        data: configDict,
+		success: function(response) {
+            console.log("configOK");
+            console.log(configDict);
+		}
+	});
 }
 
 /**
